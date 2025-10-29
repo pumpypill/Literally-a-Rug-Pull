@@ -86,7 +86,7 @@ body {
 /* Navigation */
 .nav {
     position: fixed;
-    top: 0;
+    top: 44px; /* Adjust for announcement banner */
     left: 0;
     right: 0;
     z-index: 1000;
@@ -180,6 +180,78 @@ body {
     left: 100%;
 }
 
+/* Announcement Banner */
+.announcement-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1001;
+    background: linear-gradient(135deg, rgba(0, 122, 255, 0.95) 0%, rgba(88, 86, 214, 0.95) 50%, rgba(255, 45, 146, 0.95) 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: var(--spacing-sm) 0;
+}
+
+.announcement-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-xl);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.announcement-text {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: 0.875rem;
+    color: white;
+}
+
+.announcement-label {
+    font-weight: 600;
+}
+
+.announcement-ca {
+    font-family: 'SF Mono', Consolas, 'Liberation Mono', Menlo, monospace;
+    background: rgba(255, 255, 255, 0.2);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+}
+
+.announcement-copy-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    transition: all 0.3s ease;
+}
+
+.announcement-copy-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-1px);
+}
+
+.copy-icon {
+    width: 14px;
+    height: 14px;
+}
+
 /* Hero Section */
 .hero {
     min-height: 100vh;
@@ -187,7 +259,7 @@ body {
     align-items: center;
     position: relative;
     overflow: hidden;
-    padding-top: 80px;
+    padding-top: 124px; /* Adjust for announcement banner + nav */
 }
 
 .hero-background {
@@ -770,6 +842,31 @@ body {
     
     .footer-section {
         text-align: center;
+    }
+    
+    .announcement-content {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .announcement-text {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-xs);
+    }
+    
+    .announcement-ca {
+        font-size: 0.75rem;
+        word-break: break-all;
+        max-width: 280px;
+    }
+    
+    .announcement-banner {
+        padding: var(--spacing-xs) 0;
+    }
+    
+    .announcement-content {
+        padding: 0 var(--spacing-md);
     }
 }
 
