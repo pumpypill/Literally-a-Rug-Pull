@@ -14,17 +14,8 @@
     <!-- Announcement Banner -->
     <div class="announcement-banner">
         <div class="announcement-content">
-            <div class="announcement-text">
-                <span class="announcement-label">Contract Address:</span>
-                <span class="announcement-ca" id="contractAddress">HKMQJqdnWm7cwVHDMjVR1w71zRWpDyH2vgLBkWHpNANA</span>
-            </div>
-            <button class="announcement-copy-btn" onclick="copyToClipboard()">
-                <svg class="copy-icon" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M8 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z"/>
-                    <path d="M6 3a2 2 0 00-2 2v11a2 2 0 002 2h8a2 2 0 002-2V5a2 2 0 00-2-2 3 3 0 01-3 3H9a3 3 0 01-3-3z"/>
-                </svg>
-                Copy
-            </button>
+            <span class="announcement-text">CA: </span>
+            <div class="announcement-pulse"></div>
         </div>
     </div>
 
@@ -302,18 +293,5 @@
     </footer>
 
     <script src="script.js"></script>
-    <script>
-        function copyToClipboard() {
-            const contractAddress = document.getElementById('contractAddress').textContent;
-            navigator.clipboard.writeText(contractAddress).then(() => {
-                const btn = document.querySelector('.announcement-copy-btn');
-                const originalText = btn.innerHTML;
-                btn.innerHTML = '<svg class="copy-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Copied!';
-                setTimeout(() => {
-                    btn.innerHTML = originalText;
-                }, 2000);
-            });
-        }
-    </script>
 </body>
 </html>
